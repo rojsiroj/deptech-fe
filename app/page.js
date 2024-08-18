@@ -2,6 +2,8 @@
 
 import ListUser from "@/components/ListUser";
 import ListProductCategory from "@/components/ListProductCategory";
+import Conditional from "@/components/Conditional";
+
 import { Suspense, useState } from "react";
 import Link from "next/link";
 
@@ -29,26 +31,30 @@ export default function Home() {
           );
         })}
       </div>
-      <div className="overflow-x-auto">
-        <div className="mb-2 w-full text-right">
-          <Link href="/users/create" className="btn btn-primary">
-            Add New User
-          </Link>
+      <Conditional showWhen={activeTab === "User"}>
+        <div className="overflow-x-auto">
+          <div className="mb-2 w-full text-right">
+            <Link href="/users/create" className="btn btn-primary">
+              Add New User
+            </Link>
+          </div>
+          <Suspense fallback="Loading...">
+            <ListUser />
+          </Suspense>
         </div>
-        <Suspense fallback="Loading...">
-          <ListUser />
-        </Suspense>
-      </div>
-      <div className="overflow-x-auto">
-        <div className="mb-2 w-full text-right">
-          <Link href="/users/create" className="btn btn-primary">
-            Add New Product Category
-          </Link>
+      </Conditional>
+      <Conditional showWhen={activeTab === "Category"}>
+        <div className="overflow-x-auto">
+          <div className="mb-2 w-full text-right">
+            <Link href="/users/create" className="btn btn-primary">
+              Add New Product Category
+            </Link>
+          </div>
+          <Suspense fallback="Loading...">
+            <ListProductCategory />
+          </Suspense>
         </div>
-        <Suspense fallback="Loading...">
-          <ListProductCategory />
-        </Suspense>
-      </div>
+      </Conditional>
     </div>
   );
 }

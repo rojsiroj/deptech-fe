@@ -18,7 +18,7 @@ export default function ListUser() {
           accept: "application/json",
           authorization:
             "Bearer " +
-            "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjE2MDJjOTU5LTgyZjUtNGI0MS05NGFiLTI2OGU4OGFiMjk3NCIsImlhdCI6MTcyMzk5MTE4NCwiZXhwIjoxNzIzOTk0Nzg0fQ.BJhVguv518-2G_8fzvcVrd6uajnqgiqH1w-8Fm8jY9o",
+            "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjE2MDJjOTU5LTgyZjUtNGI0MS05NGFiLTI2OGU4OGFiMjk3NCIsImlhdCI6MTcyMzk5NDk1NiwiZXhwIjoxNzI0MDgxMzU2fQ.TiOjrKfF2MuLReRNyJaoMNUko6M1XbW4CgHFMdAtz0A",
         },
       })
       .then(function (response) {
